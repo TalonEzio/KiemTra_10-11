@@ -28,13 +28,13 @@ namespace KiemTra_10_11
 
         static byte[] EncryptData(string inputText, DataProtectionScope scope)
         {
-            return ProtectedData.Protect(Encoding.UTF8.GetBytes(inputText), null, scope);
+            return ProtectedData.Protect(Encoding.Unicode.GetBytes(inputText), null, scope);
 
         }
 
         static string DecryptData(byte[] encryptedData, DataProtectionScope scope)
         {
-            return Encoding.UTF8.GetString(ProtectedData.Unprotect(encryptedData, null, scope));
+            return Encoding.Unicode.GetString(ProtectedData.Unprotect(encryptedData, null, scope));
         }
     }
 }
